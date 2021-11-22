@@ -74,8 +74,13 @@ app.post('/upload', (req, res, next) => {
   form.multiples = true;
 
   form.uploadDir = __dirname + '/static/uploaded/';
+  console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
 
   form.parse(req, function (err, _, data) {
+    if (err) {
+      console.log('ERRROR fd', err);
+      return res.sendStatus(403);
+    }
     console.log('----- przesłane formularzem pliki ------');
 
     let files = data.files;
