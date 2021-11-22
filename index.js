@@ -13,6 +13,7 @@ let lastViewedFile = {
   type: '',
   savedate: 0,
   icon: '/icons/file.png',
+  downloadLink: '#',
 };
 
 const typeToIconNameMap = {
@@ -88,15 +89,21 @@ app.post('/upload', (req, res, next) => {
       files = [files];
     }
     console.log(JSON.stringify(files));
-    files = files.map((file) => ({
-      id: id++,
-      name: file.name,
-      path: file.path,
-      size: file.size,
-      type: file.type,
-      savedate: Date.now().valueOf(),
-      icon: `/icons/${getIconName(file.type)}`,
-    }));
+    files = files.map((file) => {
+      let index = file.path.indexOf('/uploaded/');
+      if (index === -1) index = file.path.indexOf('\\uploaded\\');
+
+      return {
+        id: id++,
+        name: file.name,
+        path: file.path,
+        size: file.size,
+        type: file.type,
+        downloadLink: file.path.substring(index),
+        savedate: Date.now().valueOf(),
+        icon: `/icons/${getIconName(file.type)}`,
+      };
+    });
     uploadedFiles = [...uploadedFiles, ...files];
 
     res.redirect('/filemanager');
