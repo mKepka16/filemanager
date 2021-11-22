@@ -1,0 +1,13 @@
+
+{{> nav}}
+<div class="split content">
+  <div class="left-bar">
+    <h2>multiupload</h2>
+  </div>
+  <div class="upload-panel">
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" required name="files" multiple id="files">
+    <button type="submit">upload</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+{{> nav}}
+<div class="split content">
+  <div class="left-bar">
+    <h2>filemanager</h2>
+    <a href="/reset">Usuń dane o plikach z tablicy</a>
+  </div>
+  <div class="file-list">
+    <div class="col-header">id</div>
+    <div class="col-header">icon</div>
+    <div class="col-header">name</div>
+    <div class="col-header">size</div>
+    <div class="col-header">type</div>
+    <div class="col-header">-</div>
+    <div class="col-header">-</div>
+    <div class="col-header">-</div>
+    {{#each files}}
+      {{> fileRecord}}
+    {{/each}}
+  </div>
+</div>

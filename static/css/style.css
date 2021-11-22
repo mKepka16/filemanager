@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+.split {
+  display: flex;
+}
+
+nav {
+  display: flex;
+  background: darkblue;
+  gap: 2rem;
+  padding: 3rem 4rem;
+}
+
+nav > a {
+  color: white;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.left-bar {
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+  color: darkgray;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  min-width: 30rem;
+}
+
+.left-bar a {
+  color: darkgray;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.content {
+  flex: 1;
+  align-items: stretch;
+}
+
+.file-list {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.col-header {
+  color: white;
+  background-color: lightskyblue;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.data-cell {
+  color: darkblue;
+  font-size: 2rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.file-info {
+  padding-left: 2rem;
+}
+
+.file-info h5 {
+  font-size: 2.5rem;
+  color: darkblue;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+.file-info div {
+  padding: 2rem 0;
+}
+
+.file-info span {
+  font-size: 2.5rem;
+  color: lightgray;
+  margin-left: 1rem;
+}
+
+.upload-panel {
+  padding: 6rem 0 0 6rem;
+}
+
+.upload-panel :is(input, button) {
+  font-size: 2rem;
+  padding: 0.5rem 1.5rem;
+}
