@@ -94,7 +94,8 @@ app.post('/upload', (req, res, next) => {
     }));
     uploadedFiles = [...uploadedFiles, ...files];
 
-    res.redirect('/filemanager');
+    res.send(uploadedFiles);
+    // res.redirect('/filemanager');
   });
 });
 
