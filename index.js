@@ -29,6 +29,7 @@ function getIconName(type) {
 
 //#region AppInit
 const app = express();
+app.use(express.static('static'));
 app.use(express.json());
 app.set('views', path.join(__dirname, 'views'));
 app.engine(
@@ -107,6 +108,5 @@ app.get('/reset', (req, res, next) => {
   res.redirect('/filemanager');
 });
 
-app.use(express.static('static'));
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
