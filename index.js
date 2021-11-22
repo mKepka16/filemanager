@@ -73,7 +73,7 @@ app.post('/upload', (req, res, next) => {
   form.keepExtensions = true;
   form.multiples = true;
 
-  form.uploadDir = __dirname + '/static/upload/';
+  form.uploadDir = __dirname + '/static/uploaded/';
 
   form.parse(req, function (err, _, data) {
     console.log('----- przesłane formularzem pliki ------');
